@@ -1,4 +1,4 @@
-region = "us-east-1"
+region = "eu-central-1"
 user = "circleci-user"
 label = "hashicorp.fun"
 app = "terramino"
