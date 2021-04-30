@@ -4,14 +4,7 @@ terraform {
       source  = "hashicorp/aws"
       version = "3.22.0"
     }
-
-backend "s3" {
-   bucket = "ce5e6e58-2cff-3a82-3bc4-62d166b0946e-backend"
-   key    = "terraform/webapp/terraform.tfstate"
-   region = "eu-central-1"
- }
   }
-  
   required_version = "~> 0.14"
 }
 
@@ -77,6 +70,10 @@ output "Endpoint" {
   value = aws_s3_bucket.app.website_endpoint
 }
 
-
-
-
+terraform {
+  backend "s3" {
+    bucket = "ce5e6e58-2cff-3a82-3bc4-62d166b0946e-backend"
+    key    = "terraform/webapp/terraform.tfstate"
+    region = "eu-central-1"
+  }
+}
